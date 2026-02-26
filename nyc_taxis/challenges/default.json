@@ -1175,7 +1175,975 @@
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50
-        },        
+        },
+        {
+          "operation": "date_histogram_fixed_interval_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "date_histogram_fixed_interval_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "date_histogram_fixed_interval_with_metrics_agg",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20
+        },
+        {
+          "operation": "date_histogram_fixed_interval_with_metrics_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "date_histogram_fixed_interval_with_metrics_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20
+        },
+        {
+          "operation": "inlinestats_avg_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_count_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_median_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 10,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_max_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_sum_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_top_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_count_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_median_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 10,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_max_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_sum_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_top_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_avg_passenger_count_filtered_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+      {# non-serverless-inlinestats-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "inlinestats_avg_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_count_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_median_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 10,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_max_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_sum_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_top_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_count_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_median_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 10,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_max_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_sum_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_top_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_count_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_count_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_avg_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_avg_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_max_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_max_group_by_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_avg_passenger_count_filtered_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_then_stats_count_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_then_inlinestats_count_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_then_stats_sum_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_then_inlinestats_sum_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "inlinestats_then_stats_avg_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "stats_then_inlinestats_avg_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "multiple_stats_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "multiple_inlinestats_esql",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {%- endif -%}{# non-serverless-inlinestats-marker-end #}
+        {
+          "operation": "esql_enrich_control",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_1",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_2",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_3",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_4",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_rates_fares",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_payments",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_payments_fares",
+          "tags": ["enrich"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_control",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_1",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_2",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_3",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_4",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_rates_fares",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_payments",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_payments_fares",
+          "tags": ["enrich","stats"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_passenger_count_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_passenger_count_filtered_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_tip_percent_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_amount_group_by_integer_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_amount_group_by_keyword_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "multi_terms-keyword_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "sort_by_ts_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_calendar_interval_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_fixed_interval_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_fixed_interval_with_metrics_esql_limit_0",
+          "tags": ["limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_control_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_1_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_2_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_3_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_4_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_rates_fares_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_payments_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_enrich_payments_fares_limit_0",
+          "tags": ["enrich", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_control_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_1_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_2_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_3_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_4_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_rates_fares_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_payments_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "esql_stats_enrich_payments_fares_limit_0",
+          "tags": ["enrich", "stats", "limit0"],
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        }
+      ]
+    },
+    {
+      "name": "esql-enrich-refactor",
+      "description": "Performance benchmarks for internal R&D on query languages. This is work in progress",
+      "default": false,
+      "schedule": [
+        {
+        "operation": "delete-index",
+          "tags": ["setup"]
+        },
+        {
+          "operation": "delete-nyc-taxis-sample-index",
+          "tags": ["setup"]
+        },
+        {
+          "operation": {
+            "operation-type": "create-index",
+            "settings": {%- if index_settings is defined %} {{index_settings | tojson}} {%- else %} {
+              {# non-serverless-index-settings-marker-start #}{%- if build_flavor != "serverless" or serverless_operator == true -%}
+                {% if p_include_non_serverless_index_settings %}
+              "index.translog.flush_threshold_size": "4g",
+                {% endif %}
+              {%- endif -%}{# non-serverless-index-settings-marker-end #}
+              "index.codec": "best_compression",
+              "index.refresh_interval": "30s"
+            }{%- endif %}
+          },
+          "tags": ["setup"]
+        },
+        {
+          "name": "check-cluster-health",
+          "operation": {
+            "operation-type": "cluster-health",
+            "index": "nyc_taxis",
+            "request-params": {
+              "wait_for_status": "{{cluster_health | default('green')}}",
+              "wait_for_no_relocating_shards": "true"
+            },
+            "retry-until-success": true
+          },
+          "tags": ["setup"]
+        },
+        {
+          "operation": "index-enrich-sources",
+          "tags": ["setup"]
+        },
+        {
+          "name": "refresh-after-index-enrich-sources",
+          "operation": "refresh",
+          "tags": ["setup"]
+        },
+        {
+          "name": "check-enrich-cluster-health",
+          "operation": {
+            "operation-type": "cluster-health",
+            "request-params": {
+              "wait_for_status": "{{cluster_health | default('green')}}",
+              "wait_for_no_relocating_shards": "true"
+            },
+            "retry-until-success": true
+          },
+          "tags": ["setup"]
+        },
+        {
+          "name": "create-enrich-policies",
+          "operation": {
+            "operation-type": "create-enrich-policy",
+            "policies": {
+              "nyc_rate_codes": {
+                "match": {
+                  "indices": "nyc_rate_codes",
+                  "match_field": "id",
+                  "enrich_fields": [ "name" ]
+                }
+              },
+              "nyc_rate_codes_fares": {
+                "match": {
+                  "indices": "nyc_rate_codes",
+                  "match_field": "id",
+                  "enrich_fields": [ "name", "fare" ]
+                }
+              },
+              "nyc_payment_types": {
+                "match": {
+                  "indices": "nyc_payment_types",
+                  "match_field": "type",
+                  "enrich_fields": [ "name" ]
+                }
+              },
+              "nyc_payment_types_fares": {
+                "match": {
+                  "indices": "nyc_payment_types",
+                  "match_field": "type",
+                  "enrich_fields": [ "name", "fare" ]
+                }
+              },
+              "nyc_trip_types": {
+                "match": {
+                  "indices": "nyc_trip_types",
+                  "match_field": "type",
+                  "enrich_fields": [ "name" ]
+                }
+              },
+              "nyc_vendors": {
+                "match": {
+                  "indices": "nyc_vendors",
+                  "match_field": "id",
+                  "enrich_fields": [ "name" ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "operation": "index",
+          "warmup-time-period": 240,
+          "clients": {{bulk_indexing_clients | default(8)}},
+          "ignore-response-error-level": "{{error_level | default('non-fatal')}}",
+          "tags": ["setup"]
+        },
+        {
+          "name": "refresh-after-index",
+          "operation": "refresh",
+          "tags": ["setup"]
+        },
+        {
+          "operation": "create-nyc-taxis-sample-index",
+          "tags": ["setup"]
+        },
+        {
+          "name": "refresh-after-sample-index",
+          "operation": "refresh",
+          "tags": ["setup"]
+        },
+        {
+          "operation": "avg_passenger_count_aggregation",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_passenger_count_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {# non-serverless-inlinestats-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "one_chained_inlinestats_esql",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "two_chained_inlinestats_esql",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+        {
+          "operation": "three_chained_inlinestats_esql",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20,
+          "tags": ["inlinestats"]
+        },
+      {%- endif -%}{# non-serverless-inlinestats-marker-end #}
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "avg_passenger_count_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "avg_passenger_count_filtered_aggregation",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "avg_passenger_count_filtered_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "avg_passenger_count_filtered_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50,
+          "tags": ["inlinestats"]
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "avg_tip_percent_aggregation",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 10
+        },
+        {
+          "operation": "avg_tip_percent_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "avg_tip_percent_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "avg_amount_group_by_integer_aggregation",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+        {
+          "operation": "avg_amount_group_by_integer_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "avg_amount_group_by_integer_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "avg_amount_group_by_keyword_aggregation",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+        {
+          "operation": "avg_amount_group_by_keyword_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "avg_amount_group_by_keyword_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 5,
+          "iterations": 20
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "count_group_by_keyword_aggregation",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "count_group_by_keyword_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "count_group_by_keyword_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "multi_terms-keyword",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "composite_terms-keyword",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "multi_terms-keyword_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "multi_terms-keyword_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "sort_by_ts_query",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "sort_by_ts_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "sort_by_ts_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "date_histogram_calendar_interval",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_calendar_interval_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_calendar_interval_monthly_9months_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20
+        },
+        {
+          "operation": "date_histogram_calendar_interval_monthly_12months_esql_segment_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 20
+        },
+      {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
+        {
+          "operation": "date_histogram_calendar_interval_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+        {
+          "operation": "date_histogram_calendar_interval_weekly_3weeks_esql_doc_partitioning",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
+      {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
+        {
+          "operation": "date_histogram_fixed_interval",
+          "clients": 1,
+          "warmup-iterations": 10,
+          "iterations": 50
+        },
         {
           "operation": "date_histogram_fixed_interval_esql_segment_partitioning",
           "clients": 1,
