@@ -1837,10 +1837,11 @@
           "tags": ["setup"]
         },
         {
-          "name": "create-enrich-policies",
+          "name": "delete-create-execute-enrich-policies",
           "operation": {
-            "operation-type": "create-enrich-policy",
-            "policies": {
+            "operation-type": "enrich-policy",
+            "delete": ["nyc_rate_codes", "nyc_rate_codes_fares", "nyc_payment_types", "nyc_payment_types_fares", "nyc_trip_types", "nyc_vendors"],
+            "create": {
               "nyc_rate_codes": {
                 "match": {
                   "indices": "nyc_rate_codes",
@@ -1883,7 +1884,8 @@
                   "enrich_fields": [ "name" ]
                 }
               }
-            }
+            },
+            "execute": ["nyc_rate_codes", "nyc_rate_codes_fares", "nyc_payment_types", "nyc_payment_types_fares", "nyc_trip_types", "nyc_vendors"]
           }
         },
         {
